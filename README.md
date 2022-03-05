@@ -66,4 +66,44 @@ $npx sequelize-cli db:seed:all
 
 untuk melihat data dummy dapat melihat pada pgadmin, buka query tools database/tabel
     SELECT * FROM users 
-    jika berhasil maka isi data dari seeder yg dibuat akan muncul (fauzi dan Faisal)
+jika berhasil maka isi data dari seeder yg dibuat akan muncul (fauzi dan Faisal)
+
+
+mau ngeshow controllernya
+buka folder controller bikin file userController.js
+
+yang perlu dilakukan adalah mengimport database yang dimaksudkan (chapter 5 -> node Js menggunakan require dan modul import/export)
+pada userController.js panggil dengan require dan export
+
+bikin file userRoute.js pada folder route lalu diexport
+    panggil express dan router dan bentuk rutenya ('/user', user.all)
+
+ke bagian app.js panggil routenya (apus yang sebelumnya hello world) 
+
+lalu di run dengan 
+    $node app.js
+
+untuk cek berhasil atau gak localhost://3000/user
+muncul
+    "status":"fail",
+    "error":[
+        "column\first_name\"does not exist
+    ]hal tersebut terjadi error dikarenakan adanya dampak dari underscored sehingga harus mengubah model levelnya
+
+ke bagian user.js> hapus salah satu bagian modelnya yaitu underscored
+muncul
+    // 20220306015550
+// http://localhost:3000/users
+
+{
+  "status": "fail!",
+  "error": [
+    "column \"createdAt\" does not exist"
+  ]
+
+model bisa diubah maka diedit 
+    createdAt: 'created_at',
+    updateAt: 'update_at'
+cek kembali dengan node app.js
+
+setelah berhasil cek di local host maka data fauzi dan faizal akan muncul dalam tampilan json

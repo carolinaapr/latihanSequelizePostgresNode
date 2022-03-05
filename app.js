@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express()
 const port = 3000
+const userRouter = require('./route/userRoute.js');
 
 app.use("/", function(req,res,next){
     console.log("time: ", Date());
@@ -8,6 +9,7 @@ app.use("/", function(req,res,next){
     console.log("Request Type: ", req.method);
     next()
 })
+
 
 
 app.use(express.json())
@@ -18,5 +20,6 @@ app.use(
 )
 
 
-app.get('/',(req,res) => res.send('Hello world!!!'))
+app.use('/', userRouter)
+
 app.listen(port,()=> console.log(`example app listening to port ${port}`))
