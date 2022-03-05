@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "carolina",
+    "password": "password",
+    "database": "latihan",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "carolina",
+    "password": "password",
+    "database": "latihan",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "carolina",
+    "password": "password",
+    "database": "latihan",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
